@@ -2,23 +2,23 @@ Flat.destroy_all
 
 flats_attributes = [
   {
-    name: 'Light & Spacious Garden Flat London',
+    name: 'London Flat',
     address: '10 Clifton Gardens London W9 1DT',
-    description: 'A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory',
+    description: '1 bedroom, 2 bathrooms',
     price_per_night: 75,
     number_of_guests: 3
   },
 
   {
-  name: 'awesome flat',
+  name: 'Vintage flat',
   address: 'Berlin',
-  description: 'really awesome flat',
+  description: '2 bedrooms, 1 bathroom',
   price_per_night: 87,
   number_of_guests: 4
   },
 
   {
-  name: 'cool flat',
+  name: 'Studio flat',
   address: 'PBerg',
   description: 'Really cool flat',
   price_per_night: 65,
@@ -27,7 +27,7 @@ flats_attributes = [
 
   {
   name: 'Old flat in Berlin',
-  address: 'Neukolln',
+  address: 'Neukölln',
   description: 'Old but gold',
   price_per_night: 90,
   number_of_guests: 2
