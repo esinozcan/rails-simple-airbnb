@@ -1,17 +1,30 @@
-<h1><%= @flat.name %></h1>
 
-<p> <%= @flat.description%></p>
-<p> Price Per Night: <%= @flat.price_per_night %></p>
-<p> Number of Guests: <%= @flat.number_of_guests %> </p>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+       <%= link_to "Back", flats_path, style: 'color:#FFA500, font-size:26px', :class => "btn btn-primary"%>
+      <img src="https://images.unsplash.com/photo-1464890100898-a385f744067f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" />
+  <div class="card-product-infos" class="card-img" alt="image">
+    </div>
+    <div class="col-md-32s">
+      <div class="card-body">
+        <h5 class="card-title"><%= @flat.name %></h5>
+        <p class="card-text"><%= @flat.description%></p>
+         <p> Price Per Night: <%= @flat.price_per_night %></p>
+         <p> Number of Guests: <%= @flat.number_of_guests %> </p>
+          <%= link_to "Edit Flat", edit_flat_path, :class => "btn btn-primary" %>
+           <br>
+        <h2>Reviews </h2>
+      <ul>
+         <% @flat.reviews.each do |review| %>
+           <li> Review: <%= review.content %></li>
+            <li> Rating: <%= review.rating %></li>
+          <% end %>
+      </ul>
 
-<h2>Reviews </h2>
-<ul>
-   <% @flat.reviews.each do |review| %>
-     <li> Review: <%= review.content %></li>
-      <li> Rating: <%= review.rating %></li>
-    <% end %>
-</ul>
 
-<%= link_to "Edit Flat", edit_flat_path %>
-<%= link_to "Add review", new_flat_review_path(@flat) %>
-<%= link_to "Back", flats_path %>
+      <%= link_to "Add review", new_flat_review_path(@flat), :class => "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>

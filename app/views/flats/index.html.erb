@@ -1,15 +1,23 @@
-<h1>All our Flats</h1>
 
-<%= @flats.each do |flat| %>
-  <h2> <%= flat.name %> </h2>
-  <p> <%= flat.description %> </p>
-  <p> Price Per Night: <%= flat.price_per_night %> </p>
-  <p> Number of Guests: <%= flat.number_of_guests %> </p>
-  <%= link_to "Details", flat_path(flat) %>
-  <%= link_to "Edit", edit_flat_path(flat) %>
-  <%= link_to "Delete", flat_path(flat), method: :delete %>
+<div class="home-banner">
+  <h1>All Flats</h1>
+  <%= link_to "Add a new flat", new_flat_path, style: 'color:#FFFFFF', :class => "btn btn-primary"%>
+</div>
 
-<% end %>
+<br>
+<br>
 
-<%= link_to "Add a new flat", new_flat_path %>
+<div class="container">
+  <div class="row">
+    <% @flats.each do |f| %>
+      <div class ="col-md-6 col-lg-4 mt-5">
+       <%= render "card", flat: f %>
+       </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
 
